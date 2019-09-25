@@ -9,22 +9,22 @@ public class MathEx {
     }
 
     public static void timeLeft(int hour1, int minute1, int hour2, int minute2){
-        double minute1percent = (double)(minute1)/60;
-        double minute2percent = (double)(minute2)/60;
+        int hour1minutes = (hour1)*60;
+        int hour2minutes = (hour2)*60;
 
-        double time1 = hour1 + minute1percent;
-        double time2 = hour2 + minute2percent;
+        int time1 = hour1minutes + minute1;
+        int time2 = hour2minutes + minute2;
 
-        int timediff = (int) ((time2 - time1)*100);
+        int timediff = (time2 - time1);
 
-        int hourfinal = timediff/100;
-        int minutefinal = (int) ((timediff%100)*0.6);
+        int hourfinal = timediff/60;
+        int minutefinal = timediff%60;
 
         System.out.println("There are " + hourfinal + " hours and " + (minutefinal) + " minutes left" );
     }
 
     public static int dayOfWeek(int firstday, int chosenday){
-        int weekday = (chosenday-1)%6;
+        int weekday = (chosenday - 1 + firstday)%7;
         return weekday;
     }
 }
