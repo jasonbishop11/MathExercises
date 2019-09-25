@@ -15,14 +15,16 @@ public class MathEx {
         double time1 = hour1 + minute1percent;
         double time2 = hour2 + minute2percent;
 
-        double timediff = (time2 - time1)*60;
-        System.out.println(timediff);
-        int timefixed = (int)(timediff);
+        int timediff = (int) ((time2 - time1)*100);
 
-        int hourfinal = timefixed/100;
-        int minutefinal1 = (timefixed/10)%10;
-        int minutefinal2 = timefixed%10;
+        int hourfinal = timediff/100;
+        int minutefinal = (int) ((timediff%100)*0.6);
 
-        System.out.println("There are " + hourfinal + " hours and " + (minutefinal1*60)+(minutefinal2) + " minutes left" );
+        System.out.println("There are " + hourfinal + " hours and " + (minutefinal) + " minutes left" );
+    }
+
+    public static int dayOfWeek(int firstday, int chosenday){
+        int weekday = (chosenday-1)%6;
+        return weekday;
     }
 }
