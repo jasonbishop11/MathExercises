@@ -24,7 +24,38 @@ public class MathEx {
     }
 
     public static int dayOfWeek(int firstday, int chosenday){
-        int weekday = (chosenday - 1 + firstday)%7;
-        return weekday;
+        return (chosenday - 1 + firstday)%7;
+    }
+    public static void main(String[] args) {
+        int a = swap(123);
+        System.out.println(a);
+
+        timeLeft(1,15,4,36);
+        timeLeft(1,34,8,20);
+
+        int b = dayOfWeek(0,1);
+        System.out.println(b);
+        b = dayOfWeek(0, 14);
+        System.out.println(b);
+        b = dayOfWeek(6,22);
+        System.out.println(b);
+        b = dayOfWeek(5,4);
+        System.out.println(b);
+        b = dayOfWeek(1,24);
+        System.out.println(b);
+        b = dayOfWeek(2,1);
+        System.out.println(b);
+
+        /* Output:
+        132
+        There are 3 hours and 21 minutes left
+        There are 6 hours and 46 minutes left
+        0
+        6
+        6
+        1
+        3
+        2
+        */
     }
 }
